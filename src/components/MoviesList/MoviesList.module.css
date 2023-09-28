@@ -1,0 +1,23 @@
+.moviesList {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.moviesLink {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 5px;
+  width: 154px;
+  max-height: 400px;
+  cursor: pointer;
+  overflow: hidden;
+}
+.cardWrap {
+  min-height: 169px;
+  display: flex;
+  gap: 5px;
+  flex-direction: column;
+}
