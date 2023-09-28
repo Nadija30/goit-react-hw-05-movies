@@ -5,8 +5,8 @@ const MoviesList = ({ films }) => {
   return (
     <ul className={css.moviesList}>
       {films.map(({ id, title, overview, poster_path }) => (
-        <Link to={`/movies/${id}`} state={{ from: location }}>
-          <li className={css.moviesLink} key={id}>
+        <li className={css.moviesLink} key={id}>
+          <Link to={`/movies/${id}`} state={{ from: location }}>
             <img
               src={
                 poster_path
@@ -21,8 +21,8 @@ const MoviesList = ({ films }) => {
               <h3>{title}</h3>
               <p>{overview}</p>
             </div>
-          </li>
-        </Link>
+          </Link>
+        </li>
       ))}
     </ul>
   );

@@ -17,6 +17,7 @@ const Home = () => {
     fetchMovies(endPoint)
       .then(data => {
         setFilms(data.results);
+        console.log(data.results);
       })
       .catch(onFetchError)
       .finally(() => setLoading(false));
