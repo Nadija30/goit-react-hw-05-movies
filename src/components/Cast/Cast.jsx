@@ -1,13 +1,54 @@
-import { useEffect } from 'react';
-// import { useParams } from 'react-router-dom';
+import { Loader } from 'components/Loader/Loader';
+import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import css from './Cast.module.css';
+import { fetchMovieCast, onFetchError } from 'services/api';
+const endPoint = '/movie';
 
 const Cast = () => {
-  //   const { movieId } = useParams;
+  const { movieId } = useParams();
+  const [loading, setLoading] = useState(true);
+  const [cast, setCast] = useState([]);
+
   useEffect(() => {
-    //НТТР запит за едпоінтом /movies/get-movie-credits
-  }, []);
+    if (!movieId) {
+      return;
+    }
+    fetchMovieCast(endPoint, movieId)
+      .then(data => {
+        setCast(data.cast);
+      })
+      .catch(onFetchError)
+      .finally(() => setLoading(false));
+  }, [movieId]);
 
-  return <div>Тут буде інформація про акторський склад</div>;
+  return (
+    <>
+      <h3>Cast:</h3>
+      {loading && <Loader />}
+      {cast.length !== 0 ? (
+        <ul className={css.castList}>
+          {cast.map(({ id, name, character, profile_path }) => (
+            <li className={css.castLink} key={id}>
+              <b>{name}</b>
+              <p>Character: {character}</p>
+              <img
+                src={
+                  profile_path
+                    ? `http://image.tmdb.org/t/p/w185${profile_path}`
+                    : 'https://www.braasco.com//ASSETS/IMAGES/ITEMS/ZOOM/no_image.jpeg'
+                }
+                alt={name}
+                width="100"
+                height="150"
+              />
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <p>Вибачте! У нас немає інформації про акторський склад</p>
+      )}
+    </>
+  );
 };
-
 export default Cast;

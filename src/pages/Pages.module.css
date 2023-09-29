@@ -1,0 +1,16 @@
+.section {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.wrapDenails {
+  display: flex;
+  gap: 20px;
+}
+.wrapDenailsCard {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 400px;
+}

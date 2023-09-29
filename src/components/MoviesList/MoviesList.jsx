@@ -1,5 +1,7 @@
 import { Link, useLocation } from 'react-router-dom';
 import css from './MoviesList.module.css';
+import LinesEllipsis from 'react-lines-ellipsis';
+
 const MoviesList = ({ films }) => {
   const location = useLocation();
   return (
@@ -19,7 +21,11 @@ const MoviesList = ({ films }) => {
             />
             <div className={css.cardWrap}>
               <h3>{title}</h3>
-              <p>{overview}</p>
+              <LinesEllipsis
+                text={overview}
+                maxLine="6"
+                ellipsis="..."
+              ></LinesEllipsis>
             </div>
           </Link>
         </li>
