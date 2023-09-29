@@ -10,6 +10,7 @@ const MoviesList = ({ films }) => {
         <li className={css.moviesLink} key={id}>
           <Link to={`/movies/${id}`} state={{ from: location }}>
             <img
+              className={css.imgItem}
               src={
                 poster_path
                   ? `http://image.tmdb.org/t/p/w154${poster_path}`
@@ -23,7 +24,7 @@ const MoviesList = ({ films }) => {
               <h3>{title}</h3>
               <LinesEllipsis
                 text={overview}
-                maxLine="6"
+                maxLine="4"
                 ellipsis="..."
               ></LinesEllipsis>
             </div>

@@ -38,7 +38,9 @@ const MovieDetails = () => {
   } = movie;
   return (
     <section className={css.section}>
-      <Link to={backLinkRef.current}>{'<<<< BACK'}</Link>
+      <Link className={css.back} to={backLinkRef.current}>
+        {'<<< BACK'}
+      </Link>
       <h2> Movie Details:</h2>
       {loading && <Loader />}
       {movie && (
@@ -71,12 +73,16 @@ const MovieDetails = () => {
             </div>
           </div>
           <h3>Additional information:</h3>
-          <ul>
-            <li>
-              <Link to="cast">Cast</Link>
+          <ul className={css.info}>
+            <li className={css.additionalInfo}>
+              <Link to="cast">
+                <button className={css.infoBtn}>Cast</button>
+              </Link>
             </li>
-            <li>
-              <Link to="reviews">Reviews</Link>
+            <li className={css.additionalInfo}>
+              <Link to="reviews">
+                <button className={css.infoBtn}>Reviews</button>
+              </Link>
             </li>
           </ul>
           <Suspense fallback={<div>Loading...</div>}>

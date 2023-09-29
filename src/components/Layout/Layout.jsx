@@ -1,4 +1,3 @@
-import Footer from 'components/Footer/Footer';
 import { Suspense } from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
 import css from './Layout.module.css';
@@ -19,8 +18,10 @@ export const Layout = () => {
           <Outlet />
         </Suspense>
       </main>
-      <footer>
-        <Footer />
+      <footer className={css.footer}>
+        <p className={css.footerText}>
+          &copy; {new Date().getFullYear()} Movie finder footer
+        </p>
       </footer>
       <ToastContainer autoClose={3000} />
     </>

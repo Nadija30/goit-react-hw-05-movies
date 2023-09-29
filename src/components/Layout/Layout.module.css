@@ -10,13 +10,23 @@
 }
 .headerTitle {
   font-size: 18px;
-  color: green;
+  color: #3f51b5;
 }
 .headerNav {
   display: flex;
-  gap: 30px;
+  gap: 5px;
   font-weight: 500;
 }
 .NavLink {
   color: #212121;
+}
+.footer {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-top: 2px solid rgba(22, 8, 214, 0.2);
+}
+.footerText {
+  text-align: center;
+  padding: 20px 0;
+  margin: 0;
 }

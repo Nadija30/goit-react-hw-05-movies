@@ -39,14 +39,14 @@ const Movies = () => {
       .join('+');
 
     if (searchValue === '') {
-      toast.info('Enter your request, please!');
+      toast.info('Введіть свій запит, будь ласка!');
       setSearchParams({});
       setFilms([]);
       return;
     }
 
     if (searchValue === searchQuery) {
-      toast.info('Enter new request, please!');
+      toast.info('Будь ласка, введіть новий запит!');
       return;
     }
 

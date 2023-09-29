@@ -53,8 +53,11 @@ ul {
 a {
   text-decoration: none;
   color: #212121;
+  padding: 4px 8px;
 }
 
 a.active {
-  color: orange;
+  color: white;
+  background-color: #3f51b5;
+  border-radius: 4px;
 }

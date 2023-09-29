@@ -8,9 +8,35 @@
   display: flex;
   gap: 20px;
 }
+.info {
+  display: flex;
+  gap: 20px;
+}
+.additionalInfo {
+  padding-bottom: 10px;
+}
+.infoBtn {
+  cursor: pointer;
+  color: black;
+  background-color: white;
+  border: 1px solid #000000;
+  border-radius: 4px;
+}
+.infoBtn:hover {
+  color: white;
+  background-color: #3f51b5;
+  border: 1px solid #3f51b5;
+}
 .wrapDenailsCard {
   display: flex;
   flex-direction: column;
   gap: 20px;
   width: 400px;
+}
+.back {
+  color: #3f51b5;
+  font-weight: 700;
+  padding: 6px;
+  border: 1px solid blue;
+  width: 100px;
 }
