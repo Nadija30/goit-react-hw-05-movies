@@ -8,9 +8,11 @@
   display: flex;
   gap: 20px;
 }
+
 .info {
   display: flex;
-  gap: 20px;
+  gap: 5px;
+  margin-bottom: 30px;
 }
 .additionalInfo {
   padding-bottom: 10px;

@@ -29,9 +29,9 @@ const Movies = () => {
       .catch(onFetchError)
       .finally(() => setLoading(false));
   }, [films, searchQuery]);
-  const onSubmitSearchBar = event => {
-    event.preventDefault();
-    const form = event.currentTarget;
+  const onSubmitSearchBar = e => {
+    e.preventDefault();
+    const form = e.currentTarget;
     const searchValue = form.search.value
       .trim()
       .toLowerCase()
