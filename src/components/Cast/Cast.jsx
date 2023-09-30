@@ -3,6 +3,8 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import css from './Cast.module.css';
 import { fetchMovieCast, onFetchError } from 'services/api';
+
+import { PLACEHOLDERINFO } from 'utils/constants';
 const endPoint = '/movie';
 
 const Cast = () => {
@@ -36,11 +38,9 @@ const Cast = () => {
                 src={
                   profile_path
                     ? `http://image.tmdb.org/t/p/w185${profile_path}`
-                    : 'https://www.braasco.com//ASSETS/IMAGES/ITEMS/ZOOM/no_image.jpeg'
+                    : PLACEHOLDERINFO + '?text= ' + name
                 }
                 alt={name}
-                width="100"
-                height="150"
               />
             </li>
           ))}

@@ -4,6 +4,9 @@
   flex-direction: column;
   gap: 20px;
 }
+.wrapper {
+  padding-top: 20px;
+}
 .wrapDenails {
   display: flex;
   gap: 20px;

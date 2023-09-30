@@ -3,6 +3,7 @@ import { Suspense, useEffect, useRef, useState } from 'react';
 import { Link, Outlet, useLocation, useParams } from 'react-router-dom';
 import { fetchMovieDetails, onFetchError } from 'services/api';
 import css from 'pages/Pages.module.css';
+import { PLACEHOLDER } from 'utils/constants';
 const endPoint = '/movie';
 
 const MovieDetails = () => {
@@ -50,7 +51,7 @@ const MovieDetails = () => {
               src={
                 poster_path
                   ? `http://image.tmdb.org/t/p/w342${poster_path}`
-                  : 'https://www.braasco.com//ASSETS/IMAGES/ITEMS/ZOOM/no_image.jpeg'
+                  : PLACEHOLDER + '?text=' + title
               }
               alt={title}
               width="200"

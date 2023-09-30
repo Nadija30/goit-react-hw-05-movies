@@ -14,12 +14,7 @@ const Movies = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const searchQuery = searchParams.get('query') ?? '';
   useEffect(() => {
-    if (searchQuery === '') {
-      return;
-    }
-    if (films.length > 0) {
-      return;
-    }
+    if (!searchQuery) return;
 
     setLoading(true);
     fetchSearchMovies(endPoint, searchQuery)
@@ -28,7 +23,7 @@ const Movies = () => {
       })
       .catch(onFetchError)
       .finally(() => setLoading(false));
-  }, [films, searchQuery]);
+  }, [searchQuery]);
   const onSubmitSearchBar = e => {
     e.preventDefault();
     const form = e.currentTarget;
@@ -55,7 +50,7 @@ const Movies = () => {
   };
 
   return (
-    <div>
+    <div className={css.wrapper}>
       <Searchbar onSubmitSearchBar={onSubmitSearchBar} value={searchQuery} />
       <section className={css.section}>
         {loading && <Loader />}

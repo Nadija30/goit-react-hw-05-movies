@@ -10,7 +10,8 @@
   flex-direction: column;
   justify-content: flex-start;
   gap: 5px;
-  width: 154px;
+  font-size: 14px;
+  max-width: 154px;
   max-height: 400px;
   cursor: pointer;
   overflow: hidden;
